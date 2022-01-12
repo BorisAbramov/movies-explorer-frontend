@@ -31,8 +31,7 @@ export default function MoviesCardList({
         </li>
       </ul>
       <button
-        className={` ${
-          locationSavedMovies}  `}
+        className="movies-card-list__button-add-more-cards"
         type="button"
       >
         Ещё

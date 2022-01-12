@@ -74,7 +74,9 @@
   display: flex;
   flex-wrap: wrap;
   padding-top: 70px;
+  padding-bottom: 70px;
   max-width: 396px;
+  background-color: #202020;
 }
 
 @media (max-width: 400px) {
@@ -111,7 +113,7 @@
   font-weight: 500;
   font-size: 24px;
   line-height: 29px;
-  color: #000;
+  color: #fff;
   margin: 40px 0;
 }
 
@@ -151,7 +153,7 @@
   font-weight: normal;
   font-size: 10px;
   line-height: 12px;
-  color: #a0a0a0;
+  color: #8B8B8B;
   position: relative;
 }
 
@@ -161,12 +163,12 @@
   flex-wrap: wrap;
   font-size: 11px;
   line-height: 13px;
-  color: #000;
+  color: #fff;
 }
 
 .entry__field_type_profile:first-child::after {
   content: "";
-  border-bottom: 1px solid #e8e8e8;
+  border-bottom: 1px solid #424242;
   display: block;
   width: 100%;
 }
@@ -174,15 +176,15 @@
 .entry__input {
   border: none;
   min-height: 46px;
-  background: #f9f9f9;
-  border-radius: 8px;
-  margin: 10px 0 20px;
+  background: #202020;
+  border-bottom: 1px solid #424242;
+  margin: 5px 0 10px;
   padding: 0 15px;
   font-style: normal;
   font-weight: normal;
-  font-size: 13px;
-  line-height: 16px;
-  color: #000;
+  font-size: 14px;
+  line-height: 17px;
+  color: #fff;
 }
 
 .entry__input:focus {
@@ -226,7 +228,7 @@
   margin: 70px 0 16px;
   width: 100%;
   border: none;
-  background: #000;
+  background: #4285F4;
   border-radius: 3px;
   min-height: 45px;
   font-style: normal;
@@ -270,7 +272,7 @@
 
 .entry__button-submit_type_profile-disabled {
   background: rgb(223, 222, 222);
-  color: #cacaca;
+  color: #fff;
   opacity: 0.4;
 }
 
@@ -294,7 +296,7 @@
   font-weight: normal;
   font-size: 13px;
   line-height: 16px;
-  color: #000;
+  color: #fff;
   min-height: unset;
   margin-top: 202px;
 }
@@ -333,7 +335,7 @@
   font-weight: normal;
   font-size: 14px;
   line-height: 17px;
-  color: #a0a0a0;
+  color: #8B8B8B;
 }
 
 @media (max-width: 400px) {
@@ -348,7 +350,7 @@
   display: inline-block;
   transition: opacity 0.5s, transform 0.5s;
   margin-left: 3px;
-  color: #000;
+  color: #4285F4;
 }
 
 .entry__link:hover {
@@ -360,7 +362,7 @@
 .entry__button-sign-out {
   font-size: 13px;
   line-height: 16px;
-  color: #ff4062;
+  color: #EE3465;
   margin: 0 auto;
   border: none;
   background: transparent;
@@ -368,7 +370,7 @@
 }
 
 .entry__button-sign-out:disabled {
-  color: #b8b8b8;
+  color: #8B8B8B;
 }
 
 .entry__button-sign-out:disabled:hover {

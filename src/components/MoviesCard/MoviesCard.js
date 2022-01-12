@@ -54,7 +54,7 @@ export default function MoviesCard({
             className="movies-card__like"
             type="button"
           ></button>
-          <p className="movies-card__duration">123</p>
+          <p className="movies-card__duration">1ч 23мин</p>
         </div>
       </li>
     </>

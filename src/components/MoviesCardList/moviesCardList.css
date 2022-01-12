@@ -4,6 +4,7 @@
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
+    background-color: #202020;
   }
   
   @media (max-width: 800px) {
@@ -81,14 +82,15 @@
   .movies-card-list__button-add-more-cards {
     width: 320px;
     min-height: 36px;
-    margin: 26px auto 41px;
+    margin: 50px auto 80px;
     border: 1px solid #e8e8e8;
     font-style: normal;
     font-weight: 500;
     font-size: 12px;
     line-height: 15px;
     text-align: center;
-    background-color: #fff;
+    background-color: #2F2F2F;
+    color: #fff;
     border-radius: 10px;
     transition: opacity.5s, transform 0.5s, background-color 0.5s;
   }
@@ -102,7 +104,7 @@
   
   @media (max-width: 800px) {
     .movies-card-list__button-add-more-cards {
-      margin: 50px auto 30px;
+      margin: 50px auto 80px;
     }
   }
   
