@@ -1,5 +1,5 @@
 import React from "react";
-import "./Header.css";
+import "./header.css";
 import Navigation from "../Navigation/Navigation";
 
 export default function Header({ mainStyleHeader, loggedIn, visibleHeader }) {
