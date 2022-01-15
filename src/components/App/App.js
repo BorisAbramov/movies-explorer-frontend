@@ -7,6 +7,8 @@ import SavedMovies from '../SavedMovies/SavedMovies';
 import Register from '../Register/Register';
 import Header from '../Header/Header';
 import Login from '../Login/Login';
+import Profile from '../Profile/Profile';
+import HeaderMain from '../HeaderMain/HeaderMain';
 import { useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
 
@@ -21,7 +23,7 @@ function App() {
       <Routes>
         <Route path="/" element={
           <>
-            <Header loggedIn={loggedIn} />
+            <HeaderMain loggedIn={loggedIn} />
             <Main />
             <Footer />
           </>
@@ -42,15 +44,20 @@ function App() {
         } />
       <Route path="/signup" element={
           <>
-            <Header loggedIn={loggedIn} />
             <Register />
             <Footer />
           </>
         } />
         <Route path="/signin" element={
           <>
-            <Header loggedIn={loggedIn} />
             <Login />
+            <Footer />
+          </>
+        } />
+        <Route path="/profile" element={
+          <>
+            <Header loggedIn={loggedIn} />
+            <Profile />
             <Footer />
           </>
         } />

@@ -72,10 +72,13 @@
 
 .entry {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
+  /* flex-wrap: wrap; */
+  justify-content: center;
+  align-items: center;
   padding-top: 70px;
   padding-bottom: 70px;
-  max-width: 396px;
+  width: 100%;
   background-color: #202020;
 }
 
@@ -87,7 +90,7 @@
 }
 
 .entry_type_profile {
-  max-width: 410px;
+  /* max-width: 410px; */
 }
 
 @media (max-width: 800px) {
@@ -140,7 +143,8 @@
 }
 
 .entry__form {
-  width: 100%;
+  /* width: 100%; */
+  width: 396px;
   display: flex;
   flex-direction: column;
   position: relative;

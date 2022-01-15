@@ -1,7 +1,6 @@
-.header {
+.header-main {
     width: 100%;
-    /* background-color: #073042; */
-    background-color: #202020;
+    background-color: #073042;
     display: flex;
     flex-direction: column;
     padding: 18px 70px;

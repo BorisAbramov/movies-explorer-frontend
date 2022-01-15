@@ -63,7 +63,7 @@ export default function Navigation({ place, loggedIn }) {
               >
                 <Link
                   className="navigation__link navigation__link_type_signup"
-                  to="/sign-up"
+                  to="/signup"
                 >
                   Регистрация
                 </Link>
@@ -75,7 +75,7 @@ export default function Navigation({ place, loggedIn }) {
               >
                 <Link
                   className="navigation__link navigation__link_type_signin"
-                  to="/sign-in"
+                  to="/signin"
                 >
                   Войти
                 </Link>
