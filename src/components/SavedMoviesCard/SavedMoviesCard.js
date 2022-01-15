@@ -51,7 +51,7 @@ export default function MoviesCard({
             нет данных
           </h2>
           <button
-            className="movies-card__like"
+            className="saved-movies-card__like"
             type="button"
           ></button>
           <p className="movies-card__duration">1ч 23мин</p>
