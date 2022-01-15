@@ -26,9 +26,18 @@
     width: 310px;
     height: 304px;
     background: url(../../images/promo-logo2.svg) no-repeat center center/contain;
+    position: absolute;
+    top: 149px;
+    right: 70px;
     /* margin: 0 auto; */
   }
   
+  @media (max-width: 800px) {
+    .promo__logo{
+      position: static;
+    }
+  }
+
   @media (max-width: 400px) {
     .promo__logo{
       width: 210px;
@@ -85,7 +94,7 @@
       font-size: 13px;
       line-height: 16px;
       text-align: center;
-      align-self: center;
+      /* align-self: center; */
     }
   }
   
@@ -120,7 +129,7 @@
 
   .promo__textBlock{
       margin: 0;
-      margin-right: 190px;
+      /* margin-right: 190px; */
       padding: 0;
       max-width: 640px;
   }
@@ -128,11 +137,16 @@
   @media (max-width: 800px) {
     .promo__textBlock {
       max-width: 680px;
+      margin-top: 48px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
   }
   
   @media (max-width: 400px) {
     .promo__textBlock {
       max-width: 300px;
+      margin-top: 44px;
     }
   }
