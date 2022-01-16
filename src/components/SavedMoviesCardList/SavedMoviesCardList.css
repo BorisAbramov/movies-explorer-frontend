@@ -76,6 +76,7 @@
   @media (max-width: 400px) {
     .movies-card-list__container {
       grid-auto-rows: 250px;
+      grid-row-gap: 20px;
     }
   }
   

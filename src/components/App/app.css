@@ -93,11 +93,11 @@
   /* max-width: 410px; */
 }
 
-@media (max-width: 800px) {
+/* @media (max-width: 800px) {
   .entry_type_profile {
     margin: 30px;
   }
-}
+} */
 
 @media (max-width: 400px) {
   .entry_type_profile {
