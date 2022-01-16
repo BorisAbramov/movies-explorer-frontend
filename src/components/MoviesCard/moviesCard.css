@@ -5,7 +5,13 @@
     border-radius: 10px;
     overflow: hidden;
   }
-  
+
+  /* @media (max-width: 629px) {
+    .movies-card {
+      margin-bottom: 20px;
+    }
+  } */
+
   .movies-card__link {
     flex: 1;
     overflow: hidden;
