@@ -84,7 +84,7 @@
 
 @media (max-width: 400px) {
   .entry {
-    padding: 56px 30px;
+    padding: 56px 0px;
     justify-content: center;
   }
 }
@@ -149,7 +149,11 @@
   flex-direction: column;
   position: relative;
 }
-
+@media (max-width: 400px) {
+  .entry__form {
+    width: 260px;
+  }
+}
 .entry__field {
   display: flex;
   flex-direction: column;
