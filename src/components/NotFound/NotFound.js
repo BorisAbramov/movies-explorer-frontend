@@ -1,9 +1,9 @@
 import React from "react";
 import "./NotFound.css";
-import { useNavigate } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 export default function NotFound() {
-  const navigate = useNavigate();
+  const navigate = useHistory();
 
   return (
     <section className="not-found">

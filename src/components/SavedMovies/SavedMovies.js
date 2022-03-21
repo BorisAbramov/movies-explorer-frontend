@@ -1,16 +1,49 @@
 import React from "react";
 import "./savedMovies.css";
+// импорт компонентов
 import SearchForm from "../SearchForm/SearchForm";
 import MoviesCardList from "../MoviesCardList/MoviesCardList";
 import Preloader from "../Preloader/Preloader";
 import SearchMessage from "../SearchMessage/SearchMessage";
-import SavedMoviesCardList from '../SavedMoviesCardList/SavedMoviesCardList';
 
-export default function SavedMovies() {
+export default function SavedMovies({
+  savedMoviesSearchValueCheckboxes,
+  savedMoviesSortingCheckboxes,
+  savedMoviesSettingsButtons,
+  preloaderVisible,
+  locationSavedMovies,
+  savedMoviesCards,
+  onCardLike,
+  onCardDelete,
+  onSearchSavedMovies,
+  searchMessageSavedMovies,
+  previousValueSearchForm,
+  moviesCardTitle,
+}) {
   return (
     <>
-      <SearchForm />
-      <SavedMoviesCardList />
+      <SearchForm
+        searchValueCheckboxes={savedMoviesSearchValueCheckboxes}
+        sortingCheckboxes={savedMoviesSortingCheckboxes}
+        settingsButtons={savedMoviesSettingsButtons}
+        onSearchMovies={onSearchSavedMovies}
+        previousValueSearchForm={previousValueSearchForm}
+        locationSavedMovies={locationSavedMovies}
+      />
+      {preloaderVisible ? (
+        <Preloader />
+      ) : searchMessageSavedMovies ? (
+        <SearchMessage searchMessage={searchMessageSavedMovies} />
+      ) : (
+        <MoviesCardList
+          moviesCards={savedMoviesCards}
+          locationSavedMovies={locationSavedMovies}
+          onCardLike={onCardLike}
+          onCardDelete={onCardDelete}
+          savedMoviesCards={savedMoviesCards}
+          moviesCardTitle={moviesCardTitle}
+        />
+      )}
     </>
   );
 }

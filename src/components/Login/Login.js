@@ -28,6 +28,7 @@ export default function Login({
         <label className="entry__field">
           E-mail
           <input
+            // выключить поле, если отправляется запрос.
             disabled={formSubmitSendingStatus}
             id="entry-input-email"
             required
@@ -49,6 +50,7 @@ export default function Login({
         <label className="entry__field">
           Пароль
           <input
+            // выключить поле, если отправляется запрос.
             disabled={formSubmitSendingStatus}
             id="entry-input-password"
             required
@@ -72,6 +74,11 @@ export default function Login({
           className={` entry__submit-message ${
             messageWithResultSubmit ? "entry__submit-message_active" : ""
           } 
+          ${
+            messageWithResultSubmit.includes("ошибка")
+              ? "entry__submit-message_type_error"
+              : ""
+          }
           `}
         >
           {messageWithResultSubmit}
@@ -84,6 +91,7 @@ export default function Login({
               : ""
           } `}
           type="submit"
+          // выключить кнопку, если отправляется запрос или введенные данные невалидны.
           disabled={formSubmitSendingStatus || !currentFormValidator.isValid}
         >
           {formSubmitSendingStatus || "Войти"}

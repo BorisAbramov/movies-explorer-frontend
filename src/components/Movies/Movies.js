@@ -1,5 +1,6 @@
 import React from "react";
 import "./movies.css";
+// импорт компонентов
 import SearchForm from "../SearchForm/SearchForm";
 import MoviesCardList from "../MoviesCardList/MoviesCardList";
 import Preloader from "../Preloader/Preloader";

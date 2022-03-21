@@ -29,7 +29,7 @@ const DEFAULT_VALUES_API_DATA = {
 
 const API = {
   moviesURL: "https://api.nomoreparties.co/beatfilm-movies",
-  savedMoviesURL: "https://api.movies-star.nikolaym.nomoredomains.club",
+  savedMoviesURL: "https://api.diploma-miracle-man.nomoredomains.rocks",
   headers: {
     "Content-Type": "application/json",
   },

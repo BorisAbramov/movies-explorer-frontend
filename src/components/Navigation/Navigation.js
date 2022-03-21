@@ -4,12 +4,17 @@ import { Link, NavLink } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 
 export default function Navigation({ place, loggedIn }) {
-
+  // стейт мобильного меню
   const [mobileMenuOn, setMobileMenuOn] = useState(false);
+  // стейт закрытия мобильного меню
+  // использется для плавной анимации, т.к. при display-block не-возможно сделать плавное появление/исчезновение мобильного меню.
+  // это связано с тем, что в навигации используются одни и те же ссылки и кнопки для обычного и мобильного меню.
   const [mobileMenuCloseOn, setMobileMenuCloseOn] = useState(false);
 
+  // обработчик нажатия кнопки мобильного меню
   function handleButtonBurgerClick(e) {
     if (mobileMenuOn) {
+      // если мобильное меню активно, изменить стейт для плавного исчезновения мобильного меню.
       setMobileMenuCloseOn(true);
       setTimeout(() => {
         setMobileMenuCloseOn(false);
@@ -63,7 +68,7 @@ export default function Navigation({ place, loggedIn }) {
               >
                 <Link
                   className="navigation__link navigation__link_type_signup"
-                  to="/signup"
+                  to="/sign-up"
                 >
                   Регистрация
                 </Link>
@@ -75,7 +80,7 @@ export default function Navigation({ place, loggedIn }) {
               >
                 <Link
                   className="navigation__link navigation__link_type_signin"
-                  to="/signin"
+                  to="/sign-in"
                 >
                   Войти
                 </Link>
@@ -160,6 +165,8 @@ export default function Navigation({ place, loggedIn }) {
               </li>
             </ul>
           </nav>
+          {/* т.к. в навигации используются одни и те же ссылки и кнопки для обычного и мобильного меню,
+          создан этот блок с декоративными элементами, которые отображаются на заднем фоне мобильного меню */}
           <nav
             className={` navigation navigation_type_visible-only-mobile ${
               mobileMenuOn ? "" : "display-none"
@@ -217,21 +224,31 @@ export default function Navigation({ place, loggedIn }) {
             <li className="navigation__list navigation__list_type_about-me">
               <a
                 className="navigation__link navigation__link_type_about-me"
-                href="https://www.facebook.com/profile.php?id=100002085005079"
+                href="https://t.me/nikolaymishaev"
                 target="_blank"
                 rel="noreferrer"
               >
-                Facebook
+                Telegram
               </a>
             </li>
             <li className="navigation__list navigation__list_type_about-me">
               <a
                 className="navigation__link navigation__link_type_about-me"
-                href="https://github.com/BorisAbramov"
+                href="https://github.com/NikolayMishaev"
                 target="_blank"
                 rel="noreferrer"
               >
                 Github
+              </a>
+            </li>
+            <li className="navigation__list navigation__list_type_about-me">
+              <a
+                className="navigation__link navigation__link_type_about-me"
+                href="https://www.codewars.com/users/NikolayMishaev"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Codewars
               </a>
             </li>
           </ul>
@@ -254,11 +271,21 @@ export default function Navigation({ place, loggedIn }) {
             <li className="navigation__list navigation__list_type_footer">
               <a
                 className="navigation__link navigation__link_type_footer"
-                href="https://github.com/BorisAbramov"
+                href="https://github.com/NikolayMishaev"
                 target="_blank"
                 rel="noreferrer"
               >
                 Github
+              </a>
+            </li>
+            <li className="navigation__list navigation__list_type_footer">
+              <a
+                className="navigation__link navigation__link_type_footer"
+                href="https://t.me/nikolaymishaev"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Telegram
               </a>
             </li>
           </ul>
