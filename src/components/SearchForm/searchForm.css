@@ -219,6 +219,10 @@
   visibility: visible;
 }
 
+.search-form__legend{
+  color: #fff;
+}
+
 .search-form__list {
   margin: 0;
   padding: 0;
