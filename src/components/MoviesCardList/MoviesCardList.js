@@ -1,6 +1,5 @@
 import React from "react";
 import "./moviesCardList.css";
-// импорт компонентов
 import MoviesCard from "../MoviesCard/MoviesCard";
 
 export default function MoviesCardList({

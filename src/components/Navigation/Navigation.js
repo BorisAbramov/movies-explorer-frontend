@@ -271,7 +271,7 @@ export default function Navigation({ place, loggedIn }) {
             <li className="navigation__list navigation__list_type_footer">
               <a
                 className="navigation__link navigation__link_type_footer"
-                href="https://github.com/NikolayMishaev"
+                href="https://github.com/BorisAbramov"
                 target="_blank"
                 rel="noreferrer"
               >
@@ -281,11 +281,11 @@ export default function Navigation({ place, loggedIn }) {
             <li className="navigation__list navigation__list_type_footer">
               <a
                 className="navigation__link navigation__link_type_footer"
-                href="https://t.me/nikolaymishaev"
+                href="https://vk.com/borissanych"
                 target="_blank"
                 rel="noreferrer"
               >
-                Telegram
+                VK
               </a>
             </li>
           </ul>

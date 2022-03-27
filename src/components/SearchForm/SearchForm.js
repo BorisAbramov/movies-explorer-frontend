@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import "./searchForm.css";
 import useFormValidator from "../../hooks/useFormValidator";
-// импорт компонентов
 import FilterCheckbox from "../FilterCheckbox/FilterCheckbox";
 
 export default function SearchForm({
@@ -69,7 +68,7 @@ export default function SearchForm({
             Нужно ввести ключевое слово
           </span>
         </div>
-        <fieldset className="search-form__fieldset">
+        {/* <fieldset className="search-form__fieldset">
           <legend className="search-form__legend">Критерии поиска</legend>
           <ul className="search-form__list">
             {searchValueCheckboxes.map((checkbox, i) => (
@@ -89,7 +88,7 @@ export default function SearchForm({
                 : "search-form__overlay_active"
             }`}
           ></div>
-        </fieldset>
+        </fieldset> */}
         <fieldset className="search-form__fieldset">
           <legend className="search-form__legend">Сортировка</legend>
           <ul className="search-form__list">
@@ -112,7 +111,7 @@ export default function SearchForm({
             ></div>
           )}
         </fieldset>
-        <fieldset className="search-form__fieldset">
+        {/* <fieldset className="search-form__fieldset">
           <legend className="search-form__legend">Настройки</legend>
           <ul className="search-form__list search-form__list_type_setup">
             {settingsButtons.map((button, i) =>
@@ -144,7 +143,7 @@ export default function SearchForm({
                 : "search-form__overlay_active"
             }`}
           ></div>
-        </fieldset>
+        </fieldset> */}
       </form>
     </section>
   );

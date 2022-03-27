@@ -193,7 +193,7 @@ export default function App() {
         route === "/movies" ||
         route === "/profile") &&
       setPathURL(route);
-    // на всех роутах, кроме этого, установить главный стиль(белый фон) для компонента Header.
+    // на всех роутах, кроме этого, установить главный стиль(черный фон) для компонента Header.
     if (route === "/") {
       setMainStyleHeader(true);
     } else {
