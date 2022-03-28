@@ -1153,10 +1153,10 @@ export default function App() {
           )}
         </main>
         {!visiblePreloaderLoggedIn && <Footer visibleFooter={visibleFooter} />}
-        <ErrorMessagePopup
+        {/* <ErrorMessagePopup
           errorMessage={errorMessagePopupForError}
           onClose={handleCloseErrorMessagePopup}
-        />
+        /> */}
       </div>
     </CurrentUserContext.Provider>
   );
