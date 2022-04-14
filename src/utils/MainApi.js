@@ -59,6 +59,7 @@ export const getSavedMoviesCards = (token) => {
 };
 
 export const saveMovieCard = (token, card) => {
+  console.log(card);
   return fetch(`${API.savedMoviesURL}/movies`, {
     method: "POST",
     headers: { ...API.headers, Authorization: `Bearer ${token}` },

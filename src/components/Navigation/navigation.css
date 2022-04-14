@@ -384,7 +384,7 @@
     background: url(../../images/navigation-button-burger-menu.svg) no-repeat
       right -3px;
     padding: 0;
-    transition: opacity.4s, transform 0.4s;
+    transition: opacity .4s, transform 0.4s;
   }
   
   @media (min-width: 801px) {
