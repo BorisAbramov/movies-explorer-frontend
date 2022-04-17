@@ -197,7 +197,7 @@
 
 .entry__input:focus {
   outline-color: #f3c1f8;
-  background: #fff;
+  background: #202020;
 }
 
 .entry__input_type_error {
@@ -244,7 +244,7 @@
   font-size: 14px;
   line-height: 17px;
   color: #ffffff;
-  transition: transform 0.7s, opacity.5s;
+  transition: transform 0.7s, opacity .5s;
 }
 
 @media (max-width: 400px) {
