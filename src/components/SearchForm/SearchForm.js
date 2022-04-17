@@ -101,7 +101,7 @@ export default function SearchForm({
               />
             ))}
           </ul>
-          {!locationSavedMovies && (
+          {/* {!locationSavedMovies && (
             <div
               className={`search-form__overlay ${
                 previousValueSearchForm || currentFormValidator.values.movie
@@ -109,7 +109,7 @@ export default function SearchForm({
                   : "search-form__overlay_active"
               }`}
             ></div>
-          )}
+          )} */}
         </fieldset>
         {/* <fieldset className="search-form__fieldset">
           <legend className="search-form__legend">Настройки</legend>
