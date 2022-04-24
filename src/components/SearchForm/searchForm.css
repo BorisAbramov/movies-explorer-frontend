@@ -206,7 +206,7 @@
   left: 0;
   bottom: 0;
   right: 0;
-  background: white;
+  background: green;
   opacity: 0.8;
   border-radius: 15px 15px 25px 25px;
   opacity: 0;
@@ -217,6 +217,10 @@
 .search-form__overlay_active {
   opacity: 0.8;
   visibility: visible;
+}
+
+.search-form__legend{
+  color: #fff;
 }
 
 .search-form__list {

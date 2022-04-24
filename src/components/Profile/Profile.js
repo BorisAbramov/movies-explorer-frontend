@@ -12,6 +12,18 @@ export default function Profile({
   const currentFormValidator = useFormValidator();
   const currentUser = useContext(CurrentUserContext);
 
+  useEffect(() => {
+    if (currentUser.name) {
+      currentFormValidator.resetForm();
+      currentFormValidator.setValues({
+        ...currentFormValidator.values,
+        name: currentUser.name,
+        email: currentUser.email,
+      });
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [currentUser]);
+
   function handleSubmit(e) {
     e.preventDefault();
     onEditProfile(
@@ -23,6 +35,7 @@ export default function Profile({
   function handleChangeInput(e) {
     currentFormValidator.handleChange(e);
     if (
+      // если введенные данные в поля формы равны данным текущего пользователя, выключить кнопку сабмита формы,
       e.target.value === currentUser.name ||
       e.target.value === currentUser.email
     ) {
@@ -34,12 +47,13 @@ export default function Profile({
     <>
       <section className="entry entry_type_profile">
         <h2 className="entry__title entry__title_type_profile">
-          Привет, Пользователь!
+          Привет, {currentUser.name}!
         </h2>
         <form className="entry__form" onSubmit={handleSubmit}>
           <label className="entry__field entry__field_type_profile">
             Имя
             <input
+              // выключить поле, если отправляется запрос.
               disabled={formSubmitSendingStatus}
               id="entry-input-name"
               required
@@ -64,6 +78,7 @@ export default function Profile({
           <label className="entry__field entry__field_type_profile">
             E-mail
             <input
+              // выключить поле, если отправляется запрос.
               disabled={formSubmitSendingStatus}
               id="entry-input-email"
               required
@@ -88,6 +103,11 @@ export default function Profile({
             className={` entry__submit-message ${
               messageWithResultSubmit ? "entry__submit-message_active" : ""
             } 
+            ${
+              messageWithResultSubmit.includes("ошибка")
+                ? "entry__submit-message_type_error"
+                : ""
+            }
             `}
           >
             {messageWithResultSubmit}
@@ -100,12 +120,14 @@ export default function Profile({
                 : ""
             }`}
             type="submit"
+            // выключить кнопку, если отправляется запрос или введенные данные невалидны.
             disabled={formSubmitSendingStatus || !currentFormValidator.isValid}
           >
             {formSubmitSendingStatus || "Редактировать"}
           </button>
         </form>
         <button
+          // выключить кнопку, если отправляется запрос.
           disabled={formSubmitSendingStatus}
           aria-label="sign out page"
           className="entry__button-sign-out"

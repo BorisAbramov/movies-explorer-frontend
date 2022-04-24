@@ -2,6 +2,7 @@ import React from "react";
 import "./Register.css";
 import { Link } from "react-router-dom";
 import useFormValidator from "../../hooks/useFormValidator";
+// импорт компонентов
 import Navigation from "../Navigation/Navigation";
 
 export default function Register({
@@ -73,6 +74,7 @@ export default function Register({
         <label className="entry__field">
           Пароль
           <input
+            // выключить поле, если отправляется запрос.
             disabled={formSubmitSendingStatus}
             id="entry-input-password"
             required
@@ -96,6 +98,11 @@ export default function Register({
           className={` entry__submit-message ${
             messageWithResultSubmit ? "entry__submit-message_active" : ""
           } 
+          ${
+            messageWithResultSubmit.includes("ошибка")
+              ? "entry__submit-message_type_error"
+              : ""
+          }
           `}
         >
           {messageWithResultSubmit}
@@ -108,6 +115,7 @@ export default function Register({
               : ""
           } `}
           type="submit"
+          // выключить кнопку, если отправляется запрос или введенные данные невалидны.
           disabled={formSubmitSendingStatus || !currentFormValidator.isValid}
         >
           {formSubmitSendingStatus || "Зарегистрироваться"}

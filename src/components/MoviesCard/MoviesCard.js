@@ -1,60 +1,91 @@
-import React from 'react';
-import './moviesCard.css';
-import { convertMinutesToHours } from '../../utils/utils';
+import React from "react";
+import "./moviesCard.css";
+import { convertMinutesToHours } from "../../utils/utils";
 
 export default function MoviesCard({
   card,
   locationSavedMovies,
+  onCardLike,
+  savedMoviesCards,
+  onCardDelete,
   statusLikeDislikeMovieCard,
   moviesCardTitle,
 }) {
-  
+  const isLiked = savedMoviesCards.some((i) => i.movieId === card.id);
+  const duration = card.duration
+    ? convertMinutesToHours(card.duration)
+    : "нет данных";
+
+  function handleLikeClick(e) {
+    isLiked ? handleDeleteCard() : onCardLike(card);
+  }
+
+  function handleDeleteCard() {
+    onCardDelete(card);
+  }
   return (
     <>
       <li
-        className="movies-card"
+        className={` movies-card ${
+          locationSavedMovies ? "movies-card_place_saved-movies" : ""
+        }`}
       >
         <a
           className="movies-card__link"
-          href="#"
+          href={locationSavedMovies ? card.trailer : card.trailerLink}
           target="_blank"
           rel="noreferrer"
         >
           <img
             className="movies-card__wallpaper"
-            src="https://avatars.mds.yandex.net/get-zen_doc/3341818/pub_6013c99b5f624a023d182855_6013ca273c795d58fdb6d20d/scale_1200"
-            alt="карточка"
+            src={`${
+              typeof card.image === "object"
+                ? `https://api.nomoreparties.co/${card.image.url.slice(1)}`
+                : card.image
+            }`}
+            alt={card.nameRU}
           />
           <div className="card-overlay">
             <h2 className="card-overlay__title">
-              Название
+              {moviesCardTitle === "RU"
+                ? card.nameRU || card.nameEN || "нет данных"
+                : card.nameEN || card.nameRU || "нет данных"}
             </h2>
             <p className="card-overlay__year">
-              Год: 2022
+              Год: {card.year || "нет данных"}
             </p>
             <p className="card-overlay__country">
-              Страна: Россия
+              Страна: {card.country || "нет данных"}
             </p>
             <p className="card-overlay__director">
-              Режиссер: Некто
+              Режиссер: {card.director || "нет данных"}
             </p>
             <p className="card-overlay__duration">
-              Продолжительность: 0
+              Продолжительность: {duration}
             </p>
             <p className="card-overlay__description">
-              нет данных
+              {card.description || "нет данных"}
             </p>
           </div>
         </a>
         <div className="movies-card__description">
           <h2 className="movies-card__title">
-            нет данных
+            {moviesCardTitle === "RU"
+              ? card.nameRU || card.nameEN || "нет данных"
+              : card.nameEN || card.nameRU || "нет данных"}
           </h2>
           <button
-            className="movies-card__like"
+            disabled={statusLikeDislikeMovieCard}
+            className={`movies-card__like ${
+              isLiked ? "movies-card__like_active" : ""
+            } ${
+              locationSavedMovies ? "movies-card__like_type_saved-movies" : ""
+            }
+          `}
             type="button"
+            onClick={locationSavedMovies ? handleDeleteCard : handleLikeClick}
           ></button>
-          <p className="movies-card__duration">1ч 23мин</p>
+          <p className="movies-card__duration">{duration}</p>
         </div>
       </li>
     </>
